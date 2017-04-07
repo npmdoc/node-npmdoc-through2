@@ -1,0 +1,177 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/rvagg/through2#readme">through2 (v2.0.3)</a>
+</h1>
+<h4>A tiny wrapper around Node streams2 Transform to avoid explicit subclassing noise</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.through2">module through2</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.through2.ctor">
+            function <span class="apidocSignatureSpan">through2.</span>ctor
+            <span class="apidocSignatureSpan">(options, transform, flush)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.through2.obj">
+            function <span class="apidocSignatureSpan">through2.</span>obj
+            <span class="apidocSignatureSpan">(options, transform, flush)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.through2" id="apidoc.module.through2">module through2</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.through2.ctor" id="apidoc.element.through2.ctor">
+        function <span class="apidocSignatureSpan">through2.</span>ctor
+        <span class="apidocSignatureSpan">(options, transform, flush)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ctor = function (options, transform, flush) {
+  if (typeof options == 'function') {
+    flush     = transform
+    transform = options
+    options   = {}
+  }
+
+  if (typeof transform != 'function')
+    transform = noop
+
+  if (typeof flush != 'function')
+    flush = null
+
+  return construct(options, transform, flush)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    this.push('tacking on an extra buffer to the end');
+    cb();
+  }
+))
+.pipe(fs.createWriteStream('/tmp/wut.txt'));
+```
+
+&lt;b&gt;&lt;code&gt;through2.<span class="apidocCodeKeywordSpan">ctor</span>([ options, ] transformFunction[, flushFunction
+ ])&lt;/code&gt;&lt;/b&gt;
+
+Instead of returning a `stream.Transform` instance, `through2.ctor()` returns a **constructor** for a custom Transform. This is
+useful when you want to use the same transform logic in multiple instances.
+
+```js
+var FToC = through2.ctor({objectMode: true}, function (record, encoding, callback) {
+if (record.temp != null &amp;&amp; record.unit == "F") {
+  record.temp = ( ( record.temp - 32 ) * 5 ) / 9
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.through2.obj" id="apidoc.element.through2.obj">
+        function <span class="apidocSignatureSpan">through2.</span>obj
+        <span class="apidocSignatureSpan">(options, transform, flush)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">obj = function (options, transform, flush) {
+  if (typeof options == 'function') {
+    flush     = transform
+    transform = options
+    options   = {}
+  }
+
+  if (typeof transform != 'function')
+    transform = noop
+
+  if (typeof flush != 'function')
+    flush = null
+
+  return construct(options, transform, flush)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Or object streams:
+
+```js
+var all = []
+
+fs.createReadStream('data.csv')
+.pipe(csv2())
+.pipe(through2.<span class="apidocCodeKeywordSpan">obj</span>(function (chunk, enc, callback) {
+  var data = {
+      name    : chunk[0]
+    , address : chunk[3]
+    , phone   : chunk[10]
+  }
+  this.push(data)
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
