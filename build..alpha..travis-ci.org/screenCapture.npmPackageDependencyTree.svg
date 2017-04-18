@@ -5,7 +5,7 @@
 <tspan x="10" y="42"></tspan>
 <tspan x="10" y="58">node_modules</tspan>
 <tspan x="10" y="74">└─┬ through2@2.0.3 </tspan>
-<tspan x="10" y="90">  ├─┬ readable-stream@2.2.8 </tspan>
+<tspan x="10" y="90">  ├─┬ readable-stream@2.2.9 </tspan>
 <tspan x="10" y="106">  │ ├── buffer-shims@1.0.0 </tspan>
 <tspan x="10" y="122">  │ ├── core-util-is@1.0.2 </tspan>
 <tspan x="10" y="138">  │ ├── inherits@2.0.3 </tspan>

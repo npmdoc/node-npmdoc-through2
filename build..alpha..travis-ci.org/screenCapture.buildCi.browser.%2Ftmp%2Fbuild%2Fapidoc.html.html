@@ -56,6 +56,15 @@
 
         <li>
 
+            <a class="apidocElementLiA" href="#apidoc.element.through2.through2">
+            function <span class="apidocSignatureSpan"></span>through2
+            <span class="apidocSignatureSpan">(options, transform, flush)</span>
+            </a>
+
+        </li>
+
+        <li>
+
             <a class="apidocElementLiA" href="#apidoc.element.through2.ctor">
             function <span class="apidocSignatureSpan">through2.</span>ctor
             <span class="apidocSignatureSpan">(options, transform, flush)</span>
@@ -78,6 +87,33 @@
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.through2" id="apidoc.module.through2">module through2</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.through2.through2" id="apidoc.element.through2.through2">
+        function <span class="apidocSignatureSpan"></span>through2
+        <span class="apidocSignatureSpan">(options, transform, flush)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">through2 = function (options, transform, flush) {
+  if (typeof options == 'function') {
+    flush     = transform
+    transform = options
+    options   = {}
+  }
+
+  if (typeof transform != 'function')
+    transform = noop
+
+  if (typeof flush != 'function')
+    flush = null
+
+  return construct(options, transform, flush)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 
     <h2>
