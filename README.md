@@ -1,6 +1,6 @@
 # npmdoc-through2
 
-#### api documentation for  [through2 (v2.0.3)](https://github.com/rvagg/through2#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-through2.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-through2) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-through2.svg)](https://travis-ci.org/npmdoc/node-npmdoc-through2)
+#### basic api documentation for  [through2 (v2.0.3)](https://github.com/rvagg/through2#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-through2.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-through2) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-through2.svg)](https://travis-ci.org/npmdoc/node-npmdoc-through2)
 
 #### A tiny wrapper around Node streams2 Transform to avoid explicit subclassing noise
 
@@ -72,7 +72,8 @@
         "test": "node test/test.js | faucet",
         "test-local": "brtapsauce-local test/basic-test.js"
     },
-    "version": "2.0.3"
+    "version": "2.0.3",
+    "bin": {}
 }
 ```
 
